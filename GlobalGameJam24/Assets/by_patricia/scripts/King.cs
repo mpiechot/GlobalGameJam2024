@@ -5,6 +5,8 @@ using TMPro;
 
 public class King : MonoBehaviour
 {
+    private OutroSpriteAnimation outroSpriteAnimation;
+
     [Tooltip("how long is the king's reaction to an acitivity shown?")]
     public int reactionDuration = 1;
     [Tooltip("how much time passes without activity before the king gets bored?")]
@@ -23,7 +25,7 @@ public class King : MonoBehaviour
     private Sprite kingHappier;
     private Sprite kingSadder;
 
-    public TextMeshProUGUI amusementScoreUI;
+    //public TextMeshProUGUI amusementScoreUI;
 
     private int amusementScore = 0;
 
@@ -31,6 +33,8 @@ public class King : MonoBehaviour
 
     private void Start()
     {
+        outroSpriteAnimation = GetComponent<OutroSpriteAnimation>();
+
         lastActivityTime = Time.time;
         StartCoroutine(CheckInactivity());
 
@@ -47,7 +51,9 @@ public class King : MonoBehaviour
         amusementScore += points;
         ChangeSpriteTemplate();
         ChangeSprite(kingHappier);
-        UpdatePointsUI();
+        //UpdatePointsUI();
+
+        outroSpriteAnimation.TriggerPulse();
     }
 
     public void SubtractPoints(int points)
@@ -57,13 +63,17 @@ public class King : MonoBehaviour
         amusementScore -= points;
         ChangeSpriteTemplate();
         ChangeSprite(kingSadder);
-        UpdatePointsUI();
+        //UpdatePointsUI();
+
+        outroSpriteAnimation.TriggerPulse();
     }
 
+    /*
     private void UpdatePointsUI()
     {
         amusementScoreUI.text = amusementScore.ToString();
     }
+    */
 
     // change sprite
     private void ChangeSpriteTemplate()
