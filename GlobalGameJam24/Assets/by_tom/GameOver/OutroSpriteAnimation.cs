@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OutroSpriteAnimation : MonoBehaviour
 {
 
     private float pulseStartSize = 0.7f;
     private Coroutine pulseRoutine;
-    
+
+    public UnityEvent OnPulseStarted;
+    public UnityEvent OnPulseStopped;
+
 
     public void TriggerPulse()
     {
-        if(pulseRoutine == null)
+        if (pulseRoutine == null)
             pulseRoutine = StartCoroutine(Pulse());
         else
         {
@@ -21,9 +25,12 @@ public class OutroSpriteAnimation : MonoBehaviour
         }
     }
 
-    private void ResetAnimation()
+    private void ResetAnimation(bool resetPos = false)
     {
-        transform.localPosition = Vector3.zero;
+        if (resetPos)
+        {
+            transform.localPosition = Vector3.zero;
+        }
         transform.localScale = Vector3.one;
     }
 
