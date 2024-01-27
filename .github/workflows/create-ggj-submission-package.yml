@@ -11,7 +11,7 @@ on:
       press-img:
         description: "Path to the press image JPG (within the repo)"
         type: string
-        default: ./press.jpg
+        default: press.jpg
         required: true
       other-path:
         description: "Path to other media. Will be ignored if empty."
@@ -43,6 +43,7 @@ jobs:
       - name: Copy release
         if: ${{ inputs.release-path != '' }}
         run: cp -r ${{ inputs.release-path != '' }}/* release
+
       - name: Check if README.txt is in release/
         if: ${{ inputs.release-path != '' }}
         run: |-
