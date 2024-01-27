@@ -51,17 +51,19 @@ jobs:
           if [ -e "release/README.txt" ]; then
             echo "::warning::Your release folder does not contain a 'README.txt'!"
           fi
+        
       - name: Warn no release/-folder
         if: ${{ ! inputs.release-path != '' }}
         run: echo "::warning::Did not add content to the release folder. Make sure to add it yourself!"
 
-      - name: Copy other/-folder
-        run: cp -r project/${{ inputs.other-path != '' }}/* other
-
       - name: Warn no other folder
-        if: ${{ ! inputs.other-path != '' }}
+        if: ${{ inputs.other-path == '' }}
         run: echo "::warning::Did not add content to the other/-folder. Make sure to add it yourself!"
 
+      - name: Copy other/-folder
+        if: ${{ inputs.other-path != '' }}
+        run: cp -r project/${{ inputs.other-path }}/* other
+      
       - name: Download license
         run: curl "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt" -o license.txt
 
