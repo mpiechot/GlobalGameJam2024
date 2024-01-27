@@ -16,20 +16,20 @@ public abstract class ItemBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        #region Early Exit + generate jester variable
+        if (!collision.gameObject.transform.parent || !collision.gameObject.transform.parent.TryGetComponent<Jester>(out var jester)) return;
+        #endregion
+
         Debug.Log("BAM");
-        if (collision.gameObject.TryGetComponent<CollisionDetector>(out var detector))
+        Debug.Log("Executed");
+        Execute(jester);
+        if (points < 0)
         {
-            Debug.Log("Executed");
-            Execute(detector.Jester);
-            if(points < 0)
-            {
-                GameContext.King.SubtractPoints(points);
-            }
-            else
-            {
-                GameContext.King.AddPoints(points);
-            }
-            
+            GameContext.King.SubtractPoints(points);
+        }
+        else
+        {
+            GameContext.King.AddPoints(points);
         }
     }
 }
