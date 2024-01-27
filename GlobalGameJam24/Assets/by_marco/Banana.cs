@@ -4,12 +4,13 @@ using DG.Tweening;
 
 public class Banana : ItemBase
 {
-    protected override void Execute(GameObject gameObject)
+    protected override void Execute(Jester jester)
     {
-        //ToDo Play
+
         
 
-        GameContext.Jester.ChangeDirection(Vector3.left);
+        //jester.ChangeDirection(Vector3.left);
+        //GameContext.Jester.ChangeDirection(Vector3.left);
     }
 }
 

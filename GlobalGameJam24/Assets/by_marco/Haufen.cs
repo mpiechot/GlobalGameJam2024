@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Haufen : ItemBase
 {
-    protected override void Execute(GameObject gameObject)
+    protected override void Execute(Jester jester)
     {
-        throw new NotImplementedException();
+        jester.ChangeDirectionByDegrees(new Vector3(0,0,270));
     }
 }
 

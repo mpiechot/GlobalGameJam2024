@@ -9,13 +9,16 @@ public abstract class ItemBase : MonoBehaviour
 
     protected GameContext GameContext => gameContext != null ? gameContext : throw new SerializedFieldNotAssignedException();
 
-    protected abstract void Execute(GameObject gameObject);
+    protected abstract void Execute(Jester jester);
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<GameObject>(out var player))
+        Debug.Log("BAM");
+        if (collision.gameObject.TryGetComponent<CollisionDetector>(out var detector))
         {
-            Execute(player);
+            Debug.Log("Executed");
+            Execute(detector.Jester);
+            Destroy(gameObject);
         }
     }
 }
