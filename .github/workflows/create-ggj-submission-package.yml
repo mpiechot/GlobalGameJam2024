@@ -33,7 +33,7 @@ jobs:
           path: project
       
       - name: Create folders 
-        run: mkdir src release press other
+        run: mkdir src release press other to_zip
 
       - name: Copy source files
         run: cp -r project/${{ inputs.src-path }}/* src
@@ -67,15 +67,11 @@ jobs:
       - name: Download license
         run: curl "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt" -o license.txt
 
-      - name: Create ZIP archive
-        uses: vimtor/action-zip@v1.1
-        with:
-          files: src/ release/ press/ other/ license.txt
-          dest: my-ggj-submission.zip
-          recursive: true
-      
+      - name: Move File to zip
+        run: cp -r src release press other to_zip license.txt
+
       - name: Upload artifact (for you to download:D)
         uses: actions/upload-artifact@v4
         with:
-          path: my-ggj-submission.zip
+          path: to_zip
           name: my-ggj-submission
