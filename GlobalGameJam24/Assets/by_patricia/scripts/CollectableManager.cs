@@ -7,7 +7,7 @@ public class CollectableManager : MonoBehaviour
 {
     [SerializeField] List<Transform> cells;
     [SerializeField] Sprite lolSprite;
-    [SerializeField] int collectableRespawnTime = 10;
+    // [SerializeField] int collectableRespawnTime = 10;
 
     private Droppable previousDrop = null;
     private Droppable currentDrop = null;
