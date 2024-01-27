@@ -7,6 +7,9 @@ public class Jester : MonoBehaviour
 {
     public UnityEvent<Vector3> MovementSwitch = new UnityEvent<Vector3>();
 
+    [SerializeField, Tooltip("")]
+    private float cellDistance;
+
     public void ChangeDirection(Vector3 direction)
     {
         MovementSwitch?.Invoke(direction);
@@ -39,8 +42,15 @@ public class Jester : MonoBehaviour
 
     private void SpeedDown()
     {
-        Debug.Log("Speed Down");
         GetComponent<JesterMovement>().SpeedModifier = 1.0f;
         Destroy(GetComponent<Timer>());
+    }
+
+    public void BackUp()
+    {
+        Debug.Log("BACKUP!");
+        Vector3 currentMovement = GetComponent<JesterMovement>().MovementDir;
+        transform.position -= cellDistance * currentMovement;
+        MovementSwitch?.Invoke(-1 * currentMovement);
     }
 }
