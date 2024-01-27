@@ -5,7 +5,7 @@ using UnityEngine;
 public class JesterMovement : MonoBehaviour
 {
     [SerializeField, Tooltip("Initial direction")]
-    private Vector3 movementDir = new Vector3(0, 0, 0);
+    private Vector3 movementDir = new(0, 0, 0);
 
     [SerializeField, Tooltip("Movement Speed")]
     private float movementSpeed = 1.0f;
