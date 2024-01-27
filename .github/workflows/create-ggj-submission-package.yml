@@ -6,7 +6,7 @@ on:
       src-path:
         description: "Path to the source files of your project"
         type: string
-        default: '.'
+        default: 'GlobalGameJam24'
         required: true
       press-img:
         description: "Path to the press image JPG (within the repo)"
@@ -31,10 +31,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: project
+      - name: Create folders 
+        run: mkdir src release press other
+
       - name: Copy source files
         run: cp -r project/${{ inputs.src-path }}/* src
-      - name: Create remaining folders 
-        run: mkdir release press other
       
       - name: Copy press image
         run: cp ${{ inputs.press-img }} /press/press.jpg
