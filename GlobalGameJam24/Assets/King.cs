@@ -5,6 +5,9 @@ using TMPro;
 
 public class King : MonoBehaviour
 {
+    // idea: neutral image could change to smiling image after a certain score threshold
+    // idea: then the smiling reaction could be a laughing reaction
+
     public int reactionInSeconds = 1;
 
     public Sprite kingNeutral;

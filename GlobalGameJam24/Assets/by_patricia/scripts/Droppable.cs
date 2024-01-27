@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Droppable : MonoBehaviour
 {
-    public Draggable draggable;
+    public bool occupied = false;
 }
