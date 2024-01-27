@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,20 +12,31 @@ public class Jester : MonoBehaviour
     private List<(JesterAction, Sprite)> jesterActions = new();
 
     [SerializeField]
-    private AnimationClip jesterWalk;
+    private Animator jesterWalk;
 
     [SerializeField]
     private float cellDistance;
 
+    private Vector3 currentDirection = Vector3.up;
+
+    private void Start()
+    {
+        MovementSwitch?.Invoke(currentDirection);
+        jesterWalk.SetFloat("Horizontal", currentDirection.x);
+        jesterWalk.SetFloat("Vertical", currentDirection.y);
+    }
+
     public void ChangeDirection(Vector3 direction)
     {
         MovementSwitch?.Invoke(direction);
+        jesterWalk.SetFloat("Horizontal", direction.x);
+        jesterWalk.SetFloat("Vertical", direction.y);
     }
 
     public void ChangeDirectionByDegrees(Vector3 degrees)
     {
         Vector3 newDirection = Quaternion.Euler(degrees.x, degrees.y, degrees.z) * GetComponent<JesterMovement>().MovementDir;
-        MovementSwitch?.Invoke(newDirection);
+        ChangeDirection(newDirection);
     }
 
     public void SpeedUp()
@@ -62,24 +74,33 @@ public class Jester : MonoBehaviour
 
     public void Flip()
     {
-
+        jesterWalk.SetBool("Kacke", true);
     }
 
     public void Slip()
     {
-
+        jesterWalk.SetBool("Slip", true);
     }
 
     public void Konfetti()
     {
-
+        jesterWalk.SetBool("Konfetti", true);
     }
 
     public void Troete()
     {
-
+        jesterWalk.SetBool("Troete", true);
     }
 
+    public void Walk()
+    {
+        jesterWalk.SetBool("Konfetti", false);
+        jesterWalk.SetBool("Troete", false);
+        jesterWalk.SetBool("Slip", false);
+        jesterWalk.SetBool("Kacke", false);
+    }
+
+    [Serializable]
     private enum JesterAction
     {
         Flip,
