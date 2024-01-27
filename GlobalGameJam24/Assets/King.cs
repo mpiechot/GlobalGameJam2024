@@ -5,31 +5,58 @@ using TMPro;
 
 public class King : MonoBehaviour
 {
-    // idea: neutral image could change to smiling image after a certain score threshold
-    // idea: then the smiling reaction could be a laughing reaction
+    [Tooltip("how long is the king's reaction to an acitivity shown?")]
+    public int reactionDuration = 1;
+    [Tooltip("how much time passes without activity before the king gets bored?")]
+    public int reactionBoredomTime = 5;
+    [Tooltip("how happy is the king before his face changes permanently?")]
+    public int reactionBaseChangeThreshold = 10;
 
-    public int reactionInSeconds = 1;
+    public int minusPointsForBoredom = 1;
 
     public Sprite kingNeutral;
     public Sprite kingSmiling;
+    public Sprite kingLaughing;
     public Sprite kingSad;
+
+    private Sprite kingBase;
+    private Sprite kingHappier;
+    private Sprite kingSadder;
 
     public TextMeshProUGUI amusementScoreUI;
 
     private int amusementScore = 0;
 
+    private float lastActivityTime;
+
+    private void Start()
+    {
+        lastActivityTime = Time.time;
+        StartCoroutine(CheckInactivity());
+
+        kingBase = kingNeutral;
+        kingHappier = kingSmiling;
+        kingSadder = kingSad;
+    }
+
     // change points
     public void AddPoints(int points)
     {
+        lastActivityTime = Time.time;
+
         amusementScore += points;
-        ChangeSprite(kingSmiling);
+        ChangeSpriteTemplate();
+        ChangeSprite(kingHappier);
         UpdatePointsUI();
     }
 
     public void SubtractPoints(int points)
     {
+        lastActivityTime = Time.time;
+
         amusementScore -= points;
-        ChangeSprite(kingSad);
+        ChangeSpriteTemplate();
+        ChangeSprite(kingSadder);
         UpdatePointsUI();
     }
 
@@ -39,21 +66,49 @@ public class King : MonoBehaviour
     }
 
     // change sprite
+    private void ChangeSpriteTemplate()
+    {
+        if (amusementScore > reactionBaseChangeThreshold)
+        {
+            kingBase = kingSmiling;
+            kingHappier = kingLaughing;
+            kingSadder = kingNeutral;
+        }
+        else
+        {
+            kingBase = kingNeutral;
+            kingHappier = kingSmiling;
+            kingSadder = kingSad;
+        }
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = kingBase;
+    }
+
     private void ChangeSprite(Sprite changeSprite)
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = changeSprite;
 
-        Sprite originalSprite = spriteRenderer.sprite;
-        Sprite newSprite = changeSprite;
-        spriteRenderer.sprite = newSprite;
-
-        StartCoroutine(WaitAndChangeSpriteBack(originalSprite));
+        StartCoroutine(WaitAndChangeSpriteBack());
     }
 
-    private IEnumerator WaitAndChangeSpriteBack(Sprite originalSprite)
+    private IEnumerator WaitAndChangeSpriteBack()
     {
-        yield return new WaitForSeconds(reactionInSeconds);
+        yield return new WaitForSeconds(reactionDuration);
 
-        GetComponent<SpriteRenderer>().sprite = originalSprite;
+        GetComponent<SpriteRenderer>().sprite = kingBase;
+    }
+
+    // boredom
+    IEnumerator CheckInactivity()
+    {
+        while (true)
+        {
+            if (Time.time - lastActivityTime > reactionBoredomTime)
+            {
+                SubtractPoints(minusPointsForBoredom);
+            }
+            yield return null;
+        }
     }
 }
