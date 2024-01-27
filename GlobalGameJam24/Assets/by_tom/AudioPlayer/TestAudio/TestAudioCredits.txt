@@ -1,0 +1,11 @@
+Cats:
+CC-By 3.0
+https://opengameart.org/content/cat-sfx
+User: https://opengameart.org/users/macro
+
+BG Music:
+CC-By 4.0
+https://opengameart.org/content/rpg-title-screen-music-pack
+
+Easing Functions:
+https://gist.github.com/cjddmut/d789b9eb78216998e95c
