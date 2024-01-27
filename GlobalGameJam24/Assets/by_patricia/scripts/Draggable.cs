@@ -52,7 +52,6 @@ public class Draggable : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Droppable droppable = collider.GetComponent<Droppable>();
-
         if (droppable != null) 
         {
             currDroppable = droppable;
@@ -61,6 +60,9 @@ public class Draggable : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        currDroppable = null;
+        if (currDroppable == collider.GetComponent<Droppable>())
+        {
+            currDroppable = null;
+        }
     }
 }
