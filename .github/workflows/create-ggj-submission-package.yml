@@ -38,7 +38,7 @@ jobs:
         run: cp -r project/${{ inputs.src-path }}/* src
       
       - name: Copy press image
-        run: cp ${{ inputs.press-img }} /press
+        run: cp project/${{ inputs.press-img }} /press/press.jpg
 
       - name: Copy release
         if: ${{ inputs.release-path != '' }}
