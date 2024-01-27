@@ -3,29 +3,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GameContext", menuName = "GGJ24/Game Context")]
-public class GameContext : ScriptableObject
+public class GameContext : MonoBehaviour
 {
-	[SerializeField]
-	private JesterMovement? jester;
+    private static GameContext? instance = null;
 
-    [SerializeField]
-    private GameObject? grid;
+    public static GameContext Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new GameObject("GameContext").AddComponent<GameContext>();
+                DontDestroyOnLoad(instance.gameObject);
+            }
+            return instance;
+        }
+    }
 
-    [SerializeField]
-    private King? king;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
-    [SerializeField]
-    private List<ItemBase> itemPrefabs = new();
+    public Jester Jester { get; set; }
 
-    public JesterMovement Jester => jester != null ? jester : throw new SerializedFieldNotAssignedException();
+    public GameObject Grid { get; set; }
 
-    public King King => king != null ? king : throw new SerializedFieldNotAssignedException();
-
-    public GameObject Grid => grid != null ? grid : throw new SerializedFieldNotAssignedException();
-
-    public IReadOnlyList<ItemBase> ItemPrefabs => itemPrefabs;
+    public King King { get; set; }
 
     public GGJAudioPlayer AudioPlayer { get; set; } = null!;
 }
-
