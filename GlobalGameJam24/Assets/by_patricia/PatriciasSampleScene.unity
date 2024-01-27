@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5775e1ec8dd9ea54fb0deda0a757d5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  draggable: {fileID: 0}
+  occupied: 0
 --- !u!212 &1126868
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -999,9 +999,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5984ba00b59a67f468d58ba543195750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reactionInSeconds: 1
+  reactionDuration: 1
+  reactionBoredomTime: 5
+  reactionBaseChangeThreshold: 10
+  minusPointsForBoredom: 1
   kingNeutral: {fileID: 21300000, guid: be07feb04f6f0ed479164c6352677d05, type: 3}
   kingSmiling: {fileID: 21300000, guid: de6d1696210db294b89233df853590ce, type: 3}
+  kingLaughing: {fileID: 21300000, guid: ff762a99dee1c4842ae4b2c07d6c766e, type: 3}
   kingSad: {fileID: 21300000, guid: b92485a9daf1e874889ffd235e6dcf37, type: 3}
   amusementScoreUI: {fileID: 447744645}
 --- !u!1 &868299891
@@ -1347,7 +1351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5775e1ec8dd9ea54fb0deda0a757d5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  draggable: {fileID: 0}
+  occupied: 0
 --- !u!212 &1529062488
 SpriteRenderer:
   m_ObjectHideFlags: 0
