@@ -5324,6 +5324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Confetti Particle System
       objectReference: {fileID: 0}
+    - target: {fileID: 8038063119213283845, guid: 5f16f1388d3bb054f959f008027282ed, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8505031634631275751, guid: 5f16f1388d3bb054f959f008027282ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.17691603

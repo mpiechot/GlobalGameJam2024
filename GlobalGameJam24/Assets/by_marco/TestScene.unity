@@ -307,14 +307,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5636659810300048927, guid: 0f33fdbdae5855b49908f02c2b6b17ee, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7253822183695256896, guid: 0f33fdbdae5855b49908f02c2b6b17ee, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 375
-      objectReference: {fileID: 0}
     - target: {fileID: 8503404673672883089, guid: 0f33fdbdae5855b49908f02c2b6b17ee, type: 3}
       propertyPath: m_Name
       value: Jester (1)

@@ -17,6 +17,9 @@ public class Jester : MonoBehaviour
     [SerializeField]
     private float cellDistance;
 
+    [SerializeField]
+    private ParticleSystem konfettiSystem;
+
     private Vector3 currentDirection = Vector3.up;
 
     private void Start()
@@ -85,6 +88,7 @@ public class Jester : MonoBehaviour
     public void Konfetti()
     {
         jesterWalk.SetBool("Konfetti", true);
+        konfettiSystem.Play();
     }
 
     public void Troete()
