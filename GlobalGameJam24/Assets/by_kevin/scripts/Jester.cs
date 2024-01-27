@@ -7,7 +7,13 @@ public class Jester : MonoBehaviour
 {
     public UnityEvent<Vector3> MovementSwitch = new UnityEvent<Vector3>();
 
-    [SerializeField, Tooltip("")]
+    [SerializeField]
+    private List<(JesterAction, Sprite)> jesterActions = new();
+
+    [SerializeField]
+    private AnimationClip jesterWalk;
+
+    [SerializeField]
     private float cellDistance;
 
     public void ChangeDirection(Vector3 direction)
@@ -52,5 +58,34 @@ public class Jester : MonoBehaviour
         Vector3 currentMovement = GetComponent<JesterMovement>().MovementDir;
         transform.position -= cellDistance * currentMovement;
         MovementSwitch?.Invoke(-1 * currentMovement);
+    }
+
+    public void Flip()
+    {
+
+    }
+
+    public void Slip()
+    {
+
+    }
+
+    public void Konfetti()
+    {
+
+    }
+
+    public void Troete()
+    {
+
+    }
+
+    private enum JesterAction
+    {
+        Flip,
+        Slip,
+        Konfetti,
+        Troete,
+        Haufen,
     }
 }
