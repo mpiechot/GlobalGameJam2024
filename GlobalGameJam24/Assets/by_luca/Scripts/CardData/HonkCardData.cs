@@ -6,7 +6,9 @@ public class HonkCardData : CardData
     public HonkCardData()
     {
         executeAction = (ctx, jester) => {
-            //ctx.Jester.ChangeDirectionByDegrees(new Vector3(0,0,270));
+            jester.ChangeDirectionByDegrees(new Vector3(0, 0, 270));
+            jester.Troete();
+            ctx.AudioPlayer.RequestSFX(SFXType.Troete);
         };
     }
 }

@@ -6,7 +6,9 @@ public class ConfettiCardData : CardData
     public ConfettiCardData()
     {
         executeAction = (ctx, jester) => {
-            //ctx.Jester.ChangeDirectionByDegrees(new Vector3(0,0,270));
+            jester.ChangeDirectionByDegrees(new Vector3(0, 0, 90));
+            jester.Konfetti();
+            ctx.AudioPlayer.RequestSFX(SFXType.Confetti);
         };
     }
 }

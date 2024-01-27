@@ -6,7 +6,9 @@ public class PoopCardData : CardData
     public PoopCardData()
     {
         executeAction = (ctx, jester) => {
-            //ctx.Jester.BackUp();
+            jester.ChangeDirectionByDegrees(new Vector3(0, 0, 180));
+            jester.Flip();
+            ctx.AudioPlayer.RequestSFX(SFXType.fuerKaka3);
         };
     }
 }
