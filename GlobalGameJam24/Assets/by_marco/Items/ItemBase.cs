@@ -5,6 +5,9 @@ using UnityEngine;
 public abstract class ItemBase : MonoBehaviour
 {
     [SerializeField]
+    private int points;
+
+    [SerializeField]
     private GameContext? gameContext;
 
     protected GameContext GameContext => gameContext != null ? gameContext : throw new SerializedFieldNotAssignedException();
@@ -18,6 +21,15 @@ public abstract class ItemBase : MonoBehaviour
         {
             Debug.Log("Executed");
             Execute(detector.Jester);
+            if(points < 0)
+            {
+                GameContext.King.SubtractPoints(points);
+            }
+            else
+            {
+                GameContext.King.AddPoints(points);
+            }
+            
         }
     }
 }

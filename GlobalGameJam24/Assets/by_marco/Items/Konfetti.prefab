@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 9b6a393dda6fd4fecb0abfce9471532c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 15f0c6313a81545258261c274321254f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -94,11 +94,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6000553506959019898}
   - component: {fileID: 431191420710467535}
-  - component: {fileID: 7493086134058038841}
   - component: {fileID: 2536509634674149379}
   - component: {fileID: 2662645264157488647}
+  - component: {fileID: 2954777174256238635}
   m_Layer: 0
-  m_Name: Banana
+  m_Name: Konfetti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,19 +165,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
---- !u!114 &7493086134058038841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6094466502276054574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2921b5fed21b7435187e820bb528d52d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameContext: {fileID: 11400000, guid: 65576847fe3ee4415928d0cd2f09e1d5, type: 2}
 --- !u!114 &2536509634674149379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,3 +204,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2954777174256238635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094466502276054574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5efd095bd3dbe42ce91a06d4aae6f0fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: -10
+  gameContext: {fileID: 11400000, guid: 65576847fe3ee4415928d0cd2f09e1d5, type: 2}
