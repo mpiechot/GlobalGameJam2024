@@ -337,7 +337,7 @@ MonoBehaviour:
   _growDuration: 0.5
   _growOffset: {x: 0, y: 0.1, z: 0}
   _growScale: {x: 1.1, y: 1.1, z: 1}
-  _growColor: {r: 1, g: 1, b: 1, a: 0.6}
+  _growOpacity: 0.6
   _shrinkDuration: 0.1
   _spriteRenderer: {fileID: 4184689533098214641}
   _text: {fileID: 7268201526918285704}
@@ -390,8 +390,8 @@ MonoBehaviour:
   _cardDeckLogic: {fileID: 0}
   _itemTitleText: {fileID: 7268201526918285704}
   _visuals: {fileID: 0}
-  _draggablePrefabs: []
   _draggable: {fileID: 1728949850211417827}
+  _handCardScaler: {fileID: 4070117878816183531}
 --- !u!1001 &3804706780400531168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -400,6 +400,90 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6430600617608857707}
     m_Modifications:
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDragged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDropped.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnSuccessfulDrop.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDragged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDragged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 689979251033842494}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 689979251033842494}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDragged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDropped.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDragged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GrowVisuals
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDropped.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShrinkVisuals
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnSuccessfulDrop.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnSuccessfulDrop.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 689979251033842494}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnSuccessfulDrop.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnSuccessfulDrop.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DrawNewCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDragged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandCard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDropped.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandCard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnSuccessfulDrop.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HandCard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDragged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnDropped.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536509634674149379, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+      propertyPath: OnSuccessfulDrop.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4020658371105618679, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
       propertyPath: m_Sprite
       value: 

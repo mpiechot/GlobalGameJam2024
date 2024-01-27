@@ -70,9 +70,9 @@ public class HandCardScaler : MonoBehaviour
         _visualTweenPos = transform.DOScale(Vector3.one, _shrinkDuration)
                                     .SetEase(Ease.OutQuad);
 
-        _visualTweenColor1 = _spriteRenderer.DOColor(ColorWithOpacity(_spriteRenderer.color, 1.0f), 1.0f)
+        _visualTweenColor1 = _spriteRenderer.DOColor(ColorWithOpacity(_spriteRenderer.color, 1.0f), _shrinkDuration)
                                     .SetEase(Ease.OutQuad);
-        _visualTweenColor2 = _text.DOColor(ColorWithOpacity(_text.color, 1.0f), 1.0f)
+        _visualTweenColor2 = _text.DOColor(ColorWithOpacity(_text.color, 1.0f), _shrinkDuration)
                                             .SetEase(Ease.OutQuad);
     }
 
@@ -93,9 +93,9 @@ public class HandCardScaler : MonoBehaviour
             _visualTweenColor1.Kill();
         }
 
-        if (_visualTweenColor1 != null && _visualTweenColor1.IsActive())
+        if (_visualTweenColor2 != null && _visualTweenColor2.IsActive())
         {
-            _visualTweenColor1.Kill();
+            _visualTweenColor2.Kill();
         }
     }
 

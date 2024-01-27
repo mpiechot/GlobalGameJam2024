@@ -18,9 +18,6 @@ public class HandCard : MonoBehaviour
     private Transform _visuals;
 
     [SerializeField]
-    private GameObject[] _draggablePrefabs;
-
-    [SerializeField]
     private Draggable _draggable;
 
     [SerializeField]
@@ -31,11 +28,11 @@ public class HandCard : MonoBehaviour
     {
         if (_cardDeckLogic != null)
         {
-            Display(_cardDeckLogic.DrawCardData());
+            DrawNewCard();
         }
         else
         {
-            Debug.Log($"No Card Deck logic set for '{ gameObject.name }'!", this);
+            Debug.Log($"No Card Deck logic set for '{gameObject.name}'!", this);
         }
     }
 
@@ -43,7 +40,6 @@ public class HandCard : MonoBehaviour
     public void Display(CardData data)
     {
         _itemTitleText.text = data.title;
-
         _draggable.CardData = data;
     }
 
@@ -52,6 +48,8 @@ public class HandCard : MonoBehaviour
         _itemTitleText.text = "";
         _draggable.CardData = null;
     }
+
+    public void DrawNewCard() => Display(_cardDeckLogic.DrawCardData());
 
     public void GrowVisuals() => _handCardScaler?.GrowVisuals();
     public void ShrinkVisuals() => _handCardScaler?.ShrinkVisuals();

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -35,11 +36,14 @@ public class Draggable : MonoBehaviour
     private Vector3 spriteDragStartPosition;
 
     public UnityEvent OnSuccessfulDrop;
+    public UnityEvent OnDragged;
+    public UnityEvent<bool> OnDropped;
 
     private void OnMouseDown()
     {
         mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         spriteDragStartPosition = transform.position;
+        OnDragged?.Invoke();
     }
 
     private void OnMouseDrag()
@@ -49,30 +53,16 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Collider2D dropCollider = Physics2D.OverlapBox(transform.position, Vector2.one * 0.5f, 0, dropLayer);
-        Droppable drop = dropCollider.GetComponent<Droppable>();
-        if(drop && drop.Drop(_cardData)) 
+        Collider2D dropCollider = Physics2D.OverlapBox(transform.position, Vector2.one * 0.01f, 0, dropLayer);
+        Droppable drop = dropCollider != null ? dropCollider.GetComponent<Droppable>() : null;
+        bool dropSuccess = drop != null && drop.Drop(_cardData);
+        if(drop && dropSuccess) 
         {
             OnSuccessfulDrop?.Invoke();
         }
 
+        OnDropped?.Invoke(dropSuccess);
+
         transform.position = spriteDragStartPosition;
     }
-
-    //private void OnTriggerEnter2D(Collider2D collider)
-    //{
-    //    Droppable droppable = collider.GetComponent<Droppable>();
-    //    if (droppable != null)
-    //    {
-    //        currDroppable = droppable;
-    //    }
-    //}
-
-    //private void OnTriggerExit2D(Collider2D collider)
-    //{
-    //    if (currDroppable == collider.GetComponent<Droppable>())
-    //    {
-    //        currDroppable = null;
-    //    }
-    //}
 }
