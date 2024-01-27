@@ -33,7 +33,7 @@ jobs:
           path: project
       
       - name: Create folders 
-        run: mkdir src release press other to_zip
+        run: mkdir src release press other my-ggj-submission
 
       - name: Copy source files
         run: cp -r project/${{ inputs.src-path }}/* src
@@ -68,10 +68,10 @@ jobs:
         run: curl "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt" -o license.txt
 
       - name: Move File to zip
-        run: cp -r src release press other to_zip license.txt
+        run: cp -r src release press other license.txt my-ggj-submission
 
       - name: Upload artifact (for you to download:D)
         uses: actions/upload-artifact@v4
         with:
-          path: to_zip
+          path: my-ggj-submission
           name: my-ggj-submission
