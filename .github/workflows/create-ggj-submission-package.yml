@@ -42,7 +42,7 @@ jobs:
 
       - name: Copy release
         if: ${{ inputs.release-path != '' }}
-        run: cp -r ${{ inputs.release-path != '' }}/* release
+        run: cp -r project/${{ inputs.release-path != '' }}/* release
 
       - name: Check if README.txt is in release/
         if: ${{ inputs.release-path != '' }}
@@ -55,18 +55,21 @@ jobs:
         run: echo "::warning::Did not add content to the release folder. Make sure to add it yourself!"
 
       - name: Copy other/-folder
-        run: cp -r ${{ inputs.other-path != '' }}/* other
+        run: cp -r project/${{ inputs.other-path != '' }}/* other
+
       - name: Warn no other folder
         if: ${{ ! inputs.other-path != '' }}
         run: echo "::warning::Did not add content to the other/-folder. Make sure to add it yourself!"
 
       - name: Download license
         run: curl "https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt" -o license.txt
+
       - name: Create ZIP archive
         uses: vimtor/action-zip@v1.1
         with:
           files: src release press other license.txt
           dest: my-ggj-submission.zip
+      
       - name: Upload artifact (for you to download:D)
         uses: actions/upload-artifact@v4
         with:
