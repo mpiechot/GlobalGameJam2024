@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 314814581168568170}
   - component: {fileID: 5636659810300048927}
-  - component: {fileID: 5657065745930364608}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f2362e06870428d48a5ace371767098c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27728c00e89f5484aae8d045d00ae5b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,21 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!111 &5657065745930364608
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659920182612516828}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &4308965642398429232
 GameObject:
   m_ObjectHideFlags: 0
@@ -5221,6 +5205,7 @@ GameObject:
   - component: {fileID: 9165488709723098572}
   - component: {fileID: 5244583186361339317}
   - component: {fileID: 1175646757086574048}
+  - component: {fileID: 8819202680595013305}
   m_Layer: 0
   m_Name: Jester
   m_TagString: Untagged
@@ -5303,5 +5288,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  jesterWalk: {fileID: 0}
+  jesterWalk: {fileID: 8819202680595013305}
   cellDistance: 3
+--- !u!95 &8819202680595013305
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8503404673672883089}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18c86c4344f014fa3b7a71ae05ca9900, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
