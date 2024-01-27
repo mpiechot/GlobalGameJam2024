@@ -7,19 +7,19 @@ public class King : MonoBehaviour
 {
     private OutroSpriteAnimation outroSpriteAnimation;
 
-    [Tooltip("how long is the king's reaction to an acitivity shown?")]
-    public int reactionDuration = 1;
+    [Tooltip("how long is the king's reaction to an activity shown?")]
+    [SerializeField] int reactionDuration = 1;
     [Tooltip("how much time passes without activity before the king gets bored?")]
-    public int reactionBoredomTime = 5;
-    [Tooltip("how happy is the king before his face changes permanently?")]
-    public int reactionBaseChangeThreshold = 10;
+    [SerializeField] int reactionBoredomTime = 5;
+    [Tooltip("how happy does the king have to be before his face changes permanently?")]
+    [SerializeField] int reactionBaseChangeThreshold = 10;
 
-    public int minusPointsForBoredom = 1;
+    [SerializeField] int minusPointsForBoredom = 1;
 
-    public Sprite kingNeutral;
-    public Sprite kingSmiling;
-    public Sprite kingLaughing;
-    public Sprite kingSad;
+    [SerializeField] Sprite kingNeutral;
+    [SerializeField] Sprite kingSmiling;
+    [SerializeField] Sprite kingLaughing;
+    [SerializeField] Sprite kingSad;
 
     private Sprite kingBase;
     private Sprite kingHappier;

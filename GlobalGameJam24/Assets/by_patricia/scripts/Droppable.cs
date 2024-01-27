@@ -23,6 +23,18 @@ public class Droppable : ItemBase
         return true;
     }
 
+    public bool Drop(Collectable lol)
+    {
+        if (occupied)
+        {
+            return false;
+        }
+        occupied = true;
+        sr.sprite = lol.lolSprite;
+        action = lol.lolExecuteAction;
+        return true;
+    }
+
     public void ResetOccupiedState()
     {
         occupied = false;
@@ -33,5 +45,6 @@ public class Droppable : ItemBase
     protected override void Execute(Jester jester)
     {
         action?.Invoke(GameContext, jester);
+        ResetOccupiedState();
     }
 }
