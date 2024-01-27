@@ -6,14 +6,14 @@ using UnityEngine.Events;
 public class CardDeckLogic : MonoBehaviour
 {
     [SerializeField]
-    private CardData[] _cards;
+    private CardData[] _cardDatas;
 
 
     public UnityEvent OnCardDrawn;
 
     public void Start()
     {
-        if (_cards.Length <= 0)
+        if (_cardDatas.Length <= 0)
         {
             Debug.LogError("Cards array is empty!!", this);
         }
@@ -21,8 +21,8 @@ public class CardDeckLogic : MonoBehaviour
 
     public CardData DrawCardData()
     {
-        int i = Random.Range(0, _cards.Length);
+        int i = Random.Range(0, _cardDatas.Length);
         OnCardDrawn.Invoke();
-        return _cards[i];
+        return _cardDatas[i];
     }
 }

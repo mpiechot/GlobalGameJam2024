@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8997a9af2f7d28645b824df814956973, type: 3}
-  m_Name: BananaCardData
+  m_Script: {fileID: 11500000, guid: 99c5ff70f60e250468eae6eed3d13a3f, type: 3}
+  m_Name: PoopCardData
   m_EditorClassIdentifier: 
-  title: Banana
-  sprite: {fileID: 21300000, guid: 9b6a393dda6fd4fecb0abfce9471532c, type: 3}
+  title: Poop
+  sprite: {fileID: 21300000, guid: 5949155bc1ee34788954f69627c4e5be, type: 3}

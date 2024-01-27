@@ -9,7 +9,10 @@ using UnityEngine;
 public class HandCard : MonoBehaviour
 {
     [SerializeField]
-    public TMP_Text itemTitleText;
+    private CardDeckLogic _cardDeckLogic;
+
+    [SerializeField]
+    private TMP_Text _itemTitleText;
 
     [SerializeField]
     private Transform draggableTransform;
@@ -17,28 +20,33 @@ public class HandCard : MonoBehaviour
     [SerializeField]
     private GameObject[] _draggablePrefabs;
 
+    [SerializeField]
+    private Draggable _draggable;
 
-    public void Display(CardData data)
+
+    private void Start()
     {
-        itemTitleText.text = data.title;
-
-        GameObject toInstantiate = FindDragablePrefab(data.title);
-        GameObject draggableGo = Instantiate(toInstantiate, draggableTransform);
-        if (draggableGo.transform.TryGetComponent(out Draggable draggable))
+        if (_cardDeckLogic != null)
         {
-            draggable.SetSprite(data.sprite);
+            Display(_cardDeckLogic.DrawCardData());
         }
         else
         {
-            Debug.LogError($"Prefab '{ data.title }' did not have a Draggable component", this);
+            Debug.Log($"No Card Deck logic set for '{ gameObject.name }'!", this);
         }
+    }
+
+
+    public void Display(CardData data)
+    {
+        _itemTitleText.text = data.title;
+
+        _draggable.CardData = data;
     }
 
     public void Clear()
     {
-        itemTitleText.text = "";
+        _itemTitleText.text = "";
+        _draggable.CardData = null;
     }
-
-    // Make sure the prefab has the same name as in the card data (otherwise it wont work:P)
-    public GameObject FindDragablePrefab(string draggableTitle) => _draggablePrefabs.First(x => x.name == draggableTitle);
 }

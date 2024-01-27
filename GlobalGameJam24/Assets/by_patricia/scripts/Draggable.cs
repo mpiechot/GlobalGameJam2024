@@ -12,6 +12,22 @@ public class Draggable : MonoBehaviour
     [SerializeField]
     private SpriteRenderer _visuals;
 
+    [SerializeField]
+    private CardData _cardData;
+    public CardData CardData
+    {
+        get => _cardData;
+        set
+        {
+            _cardData = value;
+
+            if (_cardData != null && _visuals != null)
+            {
+                _visuals.sprite = _cardData.sprite;
+            }
+        }
+    }
+
     private bool isPlaced = false;
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
@@ -22,7 +38,7 @@ public class Draggable : MonoBehaviour
         if (!isPlaced)
         {
             mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            spriteDragStartPosition = transform.localPosition;
+            spriteDragStartPosition = transform.position;
         }
     }
 
@@ -30,7 +46,7 @@ public class Draggable : MonoBehaviour
     {
         if (!isPlaced)
         {
-            transform.localPosition = spriteDragStartPosition + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPosition);
+            transform.position = spriteDragStartPosition + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPosition);
         }
     }
 
@@ -68,10 +84,5 @@ public class Draggable : MonoBehaviour
         {
             currDroppable = null;
         }
-    }
-
-    public void SetSprite(Sprite sprite)
-    {
-        _visuals.sprite = sprite;
     }
 }

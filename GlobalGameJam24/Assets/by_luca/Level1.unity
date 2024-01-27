@@ -171,7 +171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2faa6846664dfb54291cfe12cfb654d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cards: []
+  _cardDatas:
+  - {fileID: 11400000, guid: 66cd9ab7b2eb1bd4491c83a23f724b62, type: 2}
+  - {fileID: 11400000, guid: 3049564c52af36840ba87e429ee4f3b2, type: 2}
+  - {fileID: 11400000, guid: 7c409a4905f4812449ab256d3ea9810d, type: 2}
+  - {fileID: 11400000, guid: 2f5095e312c990848ac2ac0bb4f7f33d, type: 2}
   OnCardDrawn:
     m_PersistentCalls:
       m_Calls: []
@@ -1342,6 +1346,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 29546081}
     m_Modifications:
+    - target: {fileID: 689979251033842494, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _cardDeckLogic
+      value: 
+      objectReference: {fileID: 29546082}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.65
@@ -1894,6 +1902,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 29546081}
     m_Modifications:
+    - target: {fileID: 689979251033842494, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _cardDeckLogic
+      value: 
+      objectReference: {fileID: 29546082}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.27
@@ -2495,6 +2507,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 29546081}
     m_Modifications:
+    - target: {fileID: 689979251033842494, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _cardDeckLogic
+      value: 
+      objectReference: {fileID: 29546082}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.88
@@ -3094,6 +3110,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 29546081}
     m_Modifications:
+    - target: {fileID: 689979251033842494, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _cardDeckLogic
+      value: 
+      objectReference: {fileID: 29546082}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.27

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8997a9af2f7d28645b824df814956973, type: 3}
-  m_Name: BananaCardData
+  m_Script: {fileID: 11500000, guid: 8d3dd32b5ef030046b3f20eaba8ea8fc, type: 3}
+  m_Name: ConfettiCardData
   m_EditorClassIdentifier: 
-  title: Banana
-  sprite: {fileID: 21300000, guid: 9b6a393dda6fd4fecb0abfce9471532c, type: 3}
+  title: Confetti
+  sprite: {fileID: 21300000, guid: 15f0c6313a81545258261c274321254f, type: 3}
