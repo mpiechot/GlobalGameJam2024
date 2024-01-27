@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuLogic : BasicMenuLogic
 {
-    [field: SerializeField]
-    public int gameSceneIdx = 1;
+    [ SerializeField]
+    private int _gameSceneIdx = 1;
 
     public void StartGame()
     {
-        SceneManager.LoadScene(gameSceneIdx, LoadSceneMode.Single);
+        SceneManager.LoadScene(_gameSceneIdx, LoadSceneMode.Single);
     }
 
     public void ExitGame()
