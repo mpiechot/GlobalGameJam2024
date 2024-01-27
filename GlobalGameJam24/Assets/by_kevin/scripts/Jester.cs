@@ -41,5 +41,6 @@ public class Jester : MonoBehaviour
     {
         Debug.Log("Speed Down");
         GetComponent<JesterMovement>().SpeedModifier = 1.0f;
+        Destroy(GetComponent<Timer>());
     }
 }
