@@ -1557,6 +1557,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4070117878816183531, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _spriteGrowScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070117878816183531, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _spriteGrowScale.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.65
@@ -2120,6 +2128,14 @@ PrefabInstance:
     - target: {fileID: 3546284508169863471, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070117878816183531, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _spriteGrowScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070117878816183531, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _spriteGrowScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2734,6 +2750,14 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4070117878816183531, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _spriteGrowScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070117878816183531, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _spriteGrowScale.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.88
@@ -3344,6 +3368,14 @@ PrefabInstance:
     - target: {fileID: 3546284508169863471, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070117878816183531, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _spriteGrowScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4070117878816183531, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: _spriteGrowScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
