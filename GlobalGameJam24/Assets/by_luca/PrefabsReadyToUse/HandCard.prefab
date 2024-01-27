@@ -341,6 +341,7 @@ MonoBehaviour:
   _shrinkDuration: 0.1
   _spriteRenderer: {fileID: 4184689533098214641}
   _text: {fileID: 7268201526918285704}
+  _spriteTransform: {fileID: 4946973482648714926}
 --- !u!1 &8404745245818560071
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +553,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117a4bbfab624db43999edaaf3ef3cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &4946973482648714926 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8100329230350846030, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}
+  m_PrefabInstance: {fileID: 3804706780400531168}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7461117920627620250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6000553506959019898, guid: 02a1564b781f6af42a5963763f8834e1, type: 3}

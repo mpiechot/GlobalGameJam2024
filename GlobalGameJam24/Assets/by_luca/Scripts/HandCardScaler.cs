@@ -16,6 +16,9 @@ public class HandCardScaler : MonoBehaviour
     private Vector3 _growScale = new(1.1f, 1.1f, 0.0f);
 
     [SerializeField]
+    private Vector3 _spriteGrowScale = new(3.0f, 3.0f, 0.0f);
+
+    [SerializeField]
     private float _growOpacity = 0.6f;
 
     [SerializeField]
@@ -29,18 +32,24 @@ public class HandCardScaler : MonoBehaviour
     [SerializeField]
     private TMP_Text _text;
 
+    [SerializeField]
+    private Transform _spriteTransform;
 
 
     private Vector3 _initialPos;
+    private Vector3 _initialSpriteScale;
 
     private Tween _visualTweenScale;
     private Tween _visualTweenPos;
     private Tween _visualTweenColor1;
     private Tween _visualTweenColor2;
 
+    private Tween _visualTweenSpriteScale;
+
     void Start()
     {
         _initialPos = transform.position;
+        _initialSpriteScale = _spriteTransform.localScale;
 
         // Invoke(nameof(GrowVisuals), 1.0f);
         // Invoke(nameof(ShrinkVisuals), 5.0f);
@@ -50,10 +59,14 @@ public class HandCardScaler : MonoBehaviour
     {
         StopTweens();
 
-        _visualTweenScale = transform.DOMove(_initialPos + _growOffset, _growDuration)
+        _visualTweenPos = transform.DOMove(_initialPos + _growOffset, _growDuration)
                                     .SetEase(Ease.OutQuad);
-        _visualTweenPos = transform.DOScale(_growScale, _growDuration)
+        _visualTweenScale = transform.DOScale(_growScale, _growDuration)
                                     .SetEase(Ease.OutQuad);
+
+        Debug.Log(_spriteTransform.transform.localScale);
+        _visualTweenSpriteScale = _spriteTransform.transform.DOScale(_spriteGrowScale, _growDuration)
+                                            .SetEase(Ease.OutQuad);
 
         _visualTweenColor1 = _spriteRenderer.DOColor(ColorWithOpacity(_spriteRenderer.color, _growOpacity), 1.0f)
                                             .SetEase(Ease.OutQuad);
@@ -65,9 +78,12 @@ public class HandCardScaler : MonoBehaviour
     {
         StopTweens();
 
-        _visualTweenScale = transform.DOMove(_initialPos, _shrinkDuration)
+        _visualTweenPos = transform.DOMove(_initialPos, _shrinkDuration)
                                     .SetEase(Ease.OutQuad);
-        _visualTweenPos = transform.DOScale(Vector3.one, _shrinkDuration)
+        _visualTweenScale = transform.DOScale(Vector3.one, _shrinkDuration)
+                                    .SetEase(Ease.OutQuad);
+        
+        _visualTweenSpriteScale = _spriteTransform.transform.DOScale(_initialSpriteScale, _shrinkDuration)
                                     .SetEase(Ease.OutQuad);
 
         _visualTweenColor1 = _spriteRenderer.DOColor(ColorWithOpacity(_spriteRenderer.color, 1.0f), _shrinkDuration)
@@ -84,6 +100,11 @@ public class HandCardScaler : MonoBehaviour
         }
 
         if (_visualTweenPos != null && _visualTweenPos.IsActive())
+        {
+            _visualTweenPos.Kill();
+        }
+
+        if (_visualTweenSpriteScale != null && _visualTweenPos.IsActive())
         {
             _visualTweenPos.Kill();
         }
