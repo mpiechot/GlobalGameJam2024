@@ -1,11 +1,15 @@
 ﻿using System;
 using UnityEngine;
+using DG.Tweening;
 
 public class Banana : ItemBase
 {
     protected override void Execute(GameObject gameObject)
     {
-        throw new NotImplementedException();
+        //ToDo Play
+        
+
+        GameContext.Jester.ChangeDirection(Vector3.left);
     }
 }
 

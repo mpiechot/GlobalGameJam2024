@@ -7,7 +7,7 @@ using UnityEngine;
 public class GameContext : ScriptableObject
 {
 	[SerializeField]
-	private GameObject? playerPrefab;
+	private JesterMovement? jester;
 
     [SerializeField]
     private GameObject? grid;
@@ -18,7 +18,7 @@ public class GameContext : ScriptableObject
     [SerializeField]
     private List<ItemBase> itemPrefabs = new();
 
-    public GameObject PlayerPrefab => playerPrefab != null ? playerPrefab : throw new SerializedFieldNotAssignedException();
+    public JesterMovement Jester => jester != null ? jester : throw new SerializedFieldNotAssignedException();
 
     public GameObject King => king != null ? king : throw new SerializedFieldNotAssignedException();
 
