@@ -31,6 +31,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           path: project
+      
       - name: Create folders 
         run: mkdir src release press other
 
@@ -38,7 +39,7 @@ jobs:
         run: cp -r project/${{ inputs.src-path }}/* src
       
       - name: Copy press image
-        run: cp project/${{ inputs.press-img }} /press/
+        run: cp project/${{ inputs.press-img }} press/press.jpg
 
       - name: Copy release
         if: ${{ inputs.release-path != '' }}
