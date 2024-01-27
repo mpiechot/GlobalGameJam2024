@@ -8,21 +8,23 @@ public class Draggable : MonoBehaviour
     // requires collider on object
     // requires rigidbody on object
 
-    private bool isDragged;
+    private bool isPlaced = false;
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
-    private Droppable droppable;
+    private Droppable currDroppable;
 
     private void OnMouseDown()
     {
-        isDragged = true;
-        mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        spriteDragStartPosition = transform.localPosition;
+        if (!isPlaced)
+        {
+            mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            spriteDragStartPosition = transform.localPosition;
+        }
     }
 
     private void OnMouseDrag()
     {
-        if (isDragged)
+        if (!isPlaced)   
         {
             transform.localPosition = spriteDragStartPosition + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPosition);
         }
@@ -30,38 +32,35 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseUp()
     {
-        isDragged = false;
-
-        if (droppable != null)
+        if (!isPlaced)
         {
-            transform.position = droppable.transform.position;
-        }
-        else
-        {
-            transform.position = spriteDragStartPosition;
-        }
+            if (currDroppable != null && !currDroppable.occupied)
+            {
+                transform.position = currDroppable.transform.position;
+                isPlaced = true;
 
-        droppable = null;
+                currDroppable.occupied = true;
+            }
+            else
+            {
+                transform.position = spriteDragStartPosition;
+            }
+            currDroppable = null;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Droppable droppable = collider.GetComponent<Droppable>();
 
-        if (droppable != null && droppable.draggable == null)
+        if (droppable != null) 
         {
-            droppable.draggable = this;
-            this.droppable = droppable;
+            currDroppable = droppable;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-        Droppable droppable = collider.GetComponent<Droppable>();
-
-        if (droppable != null && this.droppable == droppable)
-        {
-            this.droppable = null;
-        }
+        currDroppable = null;
     }
 }
