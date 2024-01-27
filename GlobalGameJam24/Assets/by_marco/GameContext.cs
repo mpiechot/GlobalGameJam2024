@@ -18,6 +18,9 @@ public class GameContext : ScriptableObject
     [SerializeField]
     private List<ItemBase> itemPrefabs = new();
 
+    [SerializeField]
+    private GGJAudioPlayer? audioPlayer;
+
     public JesterMovement Jester => jester != null ? jester : throw new SerializedFieldNotAssignedException();
 
     public GameObject King => king != null ? king : throw new SerializedFieldNotAssignedException();
@@ -25,5 +28,8 @@ public class GameContext : ScriptableObject
     public GameObject Grid => grid != null ? grid : throw new SerializedFieldNotAssignedException();
 
     public IReadOnlyList<ItemBase> ItemPrefabs => itemPrefabs;
+
+    public GGJAudioPlayer AudioPlayer => audioPlayer != null ? audioPlayer : throw new SerializedFieldNotAssignedException();
+
 }
 
