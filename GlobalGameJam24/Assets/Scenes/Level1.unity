@@ -2080,6 +2080,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117a4bbfab624db43999edaaf3ef3cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _visuals: {fileID: 0}
+  _cardData: {fileID: 0}
+  OnSuccessfulDrop:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDropped:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &777652485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3402,6 +3416,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117a4bbfab624db43999edaaf3ef3cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _visuals: {fileID: 0}
+  _cardData: {fileID: 0}
+  OnSuccessfulDrop:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDropped:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1641510400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4094,6 +4122,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117a4bbfab624db43999edaaf3ef3cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _visuals: {fileID: 0}
+  _cardData: {fileID: 0}
+  OnSuccessfulDrop:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDragged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDropped:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1940041297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3773973160820413359, guid: 5bca50daa8f6c438dba6b2acec449648, type: 3}
