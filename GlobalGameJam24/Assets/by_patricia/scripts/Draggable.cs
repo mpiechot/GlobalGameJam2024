@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class Draggable : MonoBehaviour
@@ -7,6 +8,9 @@ public class Draggable : MonoBehaviour
     // requires event system in scene
     // requires collider on object
     // requires rigidbody on object
+
+    [SerializeField]
+    private SpriteRenderer _visuals;
 
     private bool isPlaced = false;
     private Vector3 mouseDragStartPosition;
@@ -24,7 +28,7 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (!isPlaced)   
+        if (!isPlaced)
         {
             transform.localPosition = spriteDragStartPosition + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPosition);
         }
@@ -52,7 +56,7 @@ public class Draggable : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Droppable droppable = collider.GetComponent<Droppable>();
-        if (droppable != null) 
+        if (droppable != null)
         {
             currDroppable = droppable;
         }
@@ -64,5 +68,10 @@ public class Draggable : MonoBehaviour
         {
             currDroppable = null;
         }
+    }
+
+    public void SetSprite(Sprite sprite)
+    {
+        _visuals.sprite = sprite;
     }
 }
