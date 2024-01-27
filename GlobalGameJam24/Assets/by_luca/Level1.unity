@@ -1350,6 +1350,14 @@ PrefabInstance:
       propertyPath: _cardDeckLogic
       value: 
       objectReference: {fileID: 29546082}
+    - target: {fileID: 1728949850211417827, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: dropLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546284508169863471, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.65
@@ -1906,6 +1914,14 @@ PrefabInstance:
       propertyPath: _cardDeckLogic
       value: 
       objectReference: {fileID: 29546082}
+    - target: {fileID: 1728949850211417827, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: dropLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546284508169863471, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.27
@@ -2511,6 +2527,14 @@ PrefabInstance:
       propertyPath: _cardDeckLogic
       value: 
       objectReference: {fileID: 29546082}
+    - target: {fileID: 1728949850211417827, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: dropLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546284508169863471, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.88
@@ -3114,6 +3138,14 @@ PrefabInstance:
       propertyPath: _cardDeckLogic
       value: 
       objectReference: {fileID: 29546082}
+    - target: {fileID: 1728949850211417827, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: dropLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3546284508169863471, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.27

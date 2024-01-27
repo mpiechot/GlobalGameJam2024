@@ -18,7 +18,6 @@ public abstract class ItemBase : MonoBehaviour
         {
             Debug.Log("Executed");
             Execute(detector.Jester);
-            Destroy(gameObject);
         }
     }
 }

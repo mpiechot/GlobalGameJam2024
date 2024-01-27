@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Draggable : MonoBehaviour
 {
     // requires event system in scene
     // requires collider on object
     // requires rigidbody on object
+
+    [SerializeField]
+    private LayerMask dropLayer;
 
     [SerializeField]
     private SpriteRenderer _visuals;
@@ -28,61 +31,48 @@ public class Draggable : MonoBehaviour
         }
     }
 
-    private bool isPlaced = false;
     private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
-    private Droppable currDroppable;
+
+    public UnityEvent OnSuccessfulDrop;
 
     private void OnMouseDown()
     {
-        if (!isPlaced)
-        {
-            mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            spriteDragStartPosition = transform.position;
-        }
+        mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        spriteDragStartPosition = transform.position;
     }
 
     private void OnMouseDrag()
     {
-        if (!isPlaced)
-        {
-            transform.position = spriteDragStartPosition + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPosition);
-        }
+        transform.position = spriteDragStartPosition + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPosition);
     }
 
     private void OnMouseUp()
     {
-        if (!isPlaced)
+        Collider2D dropCollider = Physics2D.OverlapBox(transform.position, Vector2.one * 0.5f, 0, dropLayer);
+        Droppable drop = dropCollider.GetComponent<Droppable>();
+        if(drop && drop.Drop(_cardData)) 
         {
-            if (currDroppable != null && !currDroppable.occupied)
-            {
-                transform.position = currDroppable.transform.position;
-                isPlaced = true;
-
-                currDroppable.occupied = true;
-            }
-            else
-            {
-                transform.position = spriteDragStartPosition;
-            }
-            currDroppable = null;
+            OnSuccessfulDrop?.Invoke();
         }
+
+        transform.position = spriteDragStartPosition;
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        Droppable droppable = collider.GetComponent<Droppable>();
-        if (droppable != null)
-        {
-            currDroppable = droppable;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collider)
+    //{
+    //    Droppable droppable = collider.GetComponent<Droppable>();
+    //    if (droppable != null)
+    //    {
+    //        currDroppable = droppable;
+    //    }
+    //}
 
-    private void OnTriggerExit2D(Collider2D collider)
-    {
-        if (currDroppable == collider.GetComponent<Droppable>())
-        {
-            currDroppable = null;
-        }
-    }
+    //private void OnTriggerExit2D(Collider2D collider)
+    //{
+    //    if (currDroppable == collider.GetComponent<Droppable>())
+    //    {
+    //        currDroppable = null;
+    //    }
+    //}
 }
