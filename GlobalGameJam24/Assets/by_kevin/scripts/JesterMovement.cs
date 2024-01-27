@@ -18,10 +18,17 @@ public class JesterMovement : MonoBehaviour
     [SerializeField, Tooltip("Movement Speed")]
     private float movementSpeed = 1.0f;
 
+    private float speedModifier = 1.0f;
+    public float SpeedModifier
+    {
+        get { return speedModifier; }
+        set { speedModifier = value; }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        transform.position += Time.deltaTime * movementSpeed * movementDir;
+        transform.position += Time.deltaTime * movementSpeed * speedModifier * movementDir;
     }
 
     public void ChangeDirection(Vector3 newDirection)
