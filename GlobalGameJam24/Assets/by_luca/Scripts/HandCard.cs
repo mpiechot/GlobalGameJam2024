@@ -15,13 +15,16 @@ public class HandCard : MonoBehaviour
     private TMP_Text _itemTitleText;
 
     [SerializeField]
-    private Transform draggableTransform;
+    private Transform _visuals;
 
     [SerializeField]
     private GameObject[] _draggablePrefabs;
 
     [SerializeField]
     private Draggable _draggable;
+
+    [SerializeField]
+    private HandCardScaler _handCardScaler;
 
 
     private void Start()
@@ -49,4 +52,7 @@ public class HandCard : MonoBehaviour
         _itemTitleText.text = "";
         _draggable.CardData = null;
     }
+
+    public void GrowVisuals() => _handCardScaler?.GrowVisuals();
+    public void ShrinkVisuals() => _handCardScaler?.ShrinkVisuals();
 }
