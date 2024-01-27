@@ -36,5 +36,4 @@ public class JesterMovement : MonoBehaviour
         movementDir = newDirection;
         OnDirectionChange?.Invoke();
     }
-
 }

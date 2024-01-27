@@ -12,6 +12,7 @@ public class GGJAudioPlayer : MonoBehaviour
     {
         bgmPlayer = GetComponentInChildren<GGJBGMusicPlayer>();
         sfxPlayer = GetComponentInChildren<GGJSFXPlayer>();
+        Object.DontDestroyOnLoad(this);
     }
 
     public void RequestBGMusic(int bgMusicId)
@@ -19,9 +20,9 @@ public class GGJAudioPlayer : MonoBehaviour
         bgmPlayer.SetNextTrack(bgMusicId, true);
     }
 
-    public void RequestSFX(int sfxId)
+    public void RequestSFX(SFXType sfx)
     {
-        sfxPlayer.RequestSFX(sfxId);
+        sfxPlayer.RequestSFX((int)sfx);
     }
 
 }

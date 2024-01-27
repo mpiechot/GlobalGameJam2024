@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0452c296faf64c4b8602ac0249e9078, type: 3}
   m_Name: GameContext
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 0}
+  jester: {fileID: 0}
   grid: {fileID: 3882012960869342902, guid: 7587c35ae1eae4cfb8960dc3e54cff5f, type: 3}
   king: {fileID: 0}
   itemPrefabs:
   - {fileID: 7493086134058038841, guid: d2f968e2bb0844895ac032c1f77ce27a, type: 3}
+  - {fileID: 2954777174256238635, guid: 9539bd50cd4fb42e4acb84ef59e49921, type: 3}
+  - {fileID: 2954777174256238635, guid: 9effff1cb8f47426eb115254a481e1cf, type: 3}
+  - {fileID: 2954777174256238635, guid: 21fc099d7f6c94b7cab40b2fa8370acc, type: 3}

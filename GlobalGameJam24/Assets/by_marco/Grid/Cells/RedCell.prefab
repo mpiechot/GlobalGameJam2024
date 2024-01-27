@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3773973160820413359}
   - component: {fileID: 5177958751335711716}
-  - component: {fileID: 3280795373331674383}
   - component: {fileID: 4778468812565346008}
   m_Layer: 6
   m_Name: RedCell
@@ -86,19 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3280795373331674383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7417843184018222805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5775e1ec8dd9ea54fb0deda0a757d5e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  occupied: 0
 --- !u!61 &4778468812565346008
 BoxCollider2D:
   m_ObjectHideFlags: 0

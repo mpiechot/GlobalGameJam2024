@@ -9,5 +9,4 @@ public class Dog : ItemBase
     {
         jester.BackUp();
     }
-
 }
