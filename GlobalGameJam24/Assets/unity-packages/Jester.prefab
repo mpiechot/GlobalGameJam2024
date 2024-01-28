@@ -132,18 +132,6 @@ MonoBehaviour:
   OnGameOver:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 8503404673672883089}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -168,7 +156,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 375
@@ -5137,7 +5125,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -5274,23 +5262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad33ceea1c6214e47b44e58dcf348aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSwitch:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5244583186361339317}
-        m_TargetAssemblyTypeName: JesterMovement, Assembly-CSharp
-        m_MethodName: ChangeDirection
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   jesterWalk: {fileID: 8819202680595013305}
   cellDistance: 3
+  konfettiSystem: {fileID: 1072174003273305742}
 --- !u!95 &8819202680595013305
 Animator:
   serializedVersion: 5
@@ -5373,6 +5347,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f16f1388d3bb054f959f008027282ed, type: 3}
+--- !u!198 &1072174003273305742 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8038063119213283845, guid: 5f16f1388d3bb054f959f008027282ed, type: 3}
+  m_PrefabInstance: {fileID: 7020495278870611083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1687229692396695660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8505031634631275751, guid: 5f16f1388d3bb054f959f008027282ed, type: 3}
