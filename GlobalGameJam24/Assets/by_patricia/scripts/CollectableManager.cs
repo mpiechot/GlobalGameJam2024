@@ -7,7 +7,8 @@ public class CollectableManager : MonoBehaviour
 {
     [SerializeField] List<Transform> cells;
     [SerializeField] Sprite lolSprite;
-    // [SerializeField] int collectableRespawnTime = 10;
+    [SerializeField] int collectableRespawnTime = 10;
+    [SerializeField] int collectableScorePoints = 10;
 
     private Droppable previousDrop = null;
     private Droppable currentDrop = null;
@@ -22,7 +23,7 @@ public class CollectableManager : MonoBehaviour
         while (true)
         {
             SpawnCollectable();
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(collectableRespawnTime);
         }
     }
 
@@ -37,7 +38,7 @@ public class CollectableManager : MonoBehaviour
 
         currentDrop = cells[index].GetComponent<Droppable>();
         currentDrop.Drop(new Collectable(lolSprite, (ctx, jester) => {
-            ctx.King.AddPoints(5);
+            ctx.King.AddPoints(collectableScorePoints);
         }));
         previousDrop = currentDrop;
     }
