@@ -8,9 +8,6 @@ public class GameStartup : MonoBehaviour
     private GGJAudioPlayer? audioPlayer;
 
     [SerializeField]
-    private GameContext? gameContext;
-
-    [SerializeField]
     private King king;
 
     [SerializeField]
@@ -21,15 +18,15 @@ public class GameStartup : MonoBehaviour
     {
         if(audioPlayer != null)
         {
-            gameContext.AudioPlayer = audioPlayer;
+            GameContext.Instance.AudioPlayer = audioPlayer;
         }
         if (jester != null)
         {
-            gameContext.Jester = jester;
+            GameContext.Instance.Jester = jester;
         }
         if (king != null)
         {
-            gameContext.King = king;
+            GameContext.Instance.King = king;
         }
     }
 }
