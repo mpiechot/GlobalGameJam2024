@@ -919,6 +919,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 36bc85882c02bb947b00b5264789c0a6, type: 3}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 81d023428dae3624ab34bf6f0bf5e187, type: 3}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: e933e4f6f0b2ec24ebfe296940d8a292, type: 3}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: ad641e3dd2cc94349a7f4761e74118f0, type: 3}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: e78c3599ddcd15945a51ca07aff7a42c, type: 3}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 17ce908b9f88f7347af1d246c33db57b, type: 3}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5502dc9a766bda14f9e0855d2da3f3bd, type: 3}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 200573bd72327dc41bf26084bf3884be, type: 3}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 63f6bceb5db18b74697923b366f7e120, type: 3}
+    - target: {fileID: 4717065882398550755, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
+      propertyPath: bgMusicClips.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 893c41e83c4415342bb56dac26e677cb, type: 3}
     - target: {fileID: 7785073389040610197, guid: 8dc9a6302c40502419582c136f2dcf7e, type: 3}
       propertyPath: m_Name
       value: AudioPlayer

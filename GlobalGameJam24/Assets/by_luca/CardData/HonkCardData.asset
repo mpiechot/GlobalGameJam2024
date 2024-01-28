@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Honk
   sprite: {fileID: 21300000, guid: b0ead6460a5a04b98bee2091e4452358, type: 3}
+  Points: 1

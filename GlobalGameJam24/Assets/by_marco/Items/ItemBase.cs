@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class ItemBase : MonoBehaviour
 {
-    [SerializeField]
     protected int points;
 
     protected GameContext GameContext { get; private set; }
@@ -21,10 +20,6 @@ public abstract class ItemBase : MonoBehaviour
         #region Early Exit + generate jester variable
         if (!collision.gameObject.transform.parent || !collision.gameObject.transform.parent.TryGetComponent<Jester>(out var jester)) return;
         #endregion
-
-
-        if(Execute(jester))
-            jester.transform.position = transform.position + jester.transform.position - collision.bounds.center; 
         
         if (points < 0)
         {
@@ -34,5 +29,9 @@ public abstract class ItemBase : MonoBehaviour
         {
             GameContext.King.AddPoints(points);
         }
+
+        if(Execute(jester))
+            jester.transform.position = transform.position + jester.transform.position - collision.bounds.center; 
+        // Don't do anything after here, Execute resets the state and will alter invisible fields. -.-
     }
 }

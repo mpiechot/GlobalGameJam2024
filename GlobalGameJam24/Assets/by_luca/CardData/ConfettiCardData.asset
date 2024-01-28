@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Confetti
   sprite: {fileID: 21300000, guid: 15f0c6313a81545258261c274321254f, type: 3}
+  Points: 1

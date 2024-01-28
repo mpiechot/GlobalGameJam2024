@@ -21,6 +21,7 @@ public class Droppable : ItemBase
         occupied = true;
         sr.sprite = droppedData.sprite;
         action = droppedData.executeAction;
+        points = droppedData.Points;
         return true;
     }
 
@@ -41,6 +42,7 @@ public class Droppable : ItemBase
         occupied = false;
         sr.sprite = null;
         action = null;
+        points = 0;
     }
 
     protected override bool Execute(Jester jester)

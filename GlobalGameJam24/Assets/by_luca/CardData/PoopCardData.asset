@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Poop
   sprite: {fileID: 21300000, guid: 5949155bc1ee34788954f69627c4e5be, type: 3}
+  Points: 1

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Banana
   sprite: {fileID: 21300000, guid: 9b6a393dda6fd4fecb0abfce9471532c, type: 3}
+  Points: 1

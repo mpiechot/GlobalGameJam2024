@@ -9,6 +9,7 @@ public abstract class CardData : ScriptableObject
 {
     public string title;
     public Sprite sprite;
+    public int Points;
 
     public Action<GameContext, Jester> executeAction;
 }
