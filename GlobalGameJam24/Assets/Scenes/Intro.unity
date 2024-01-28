@@ -230,7 +230,7 @@ MonoBehaviour:
   m_text: "Upon hearing this,\na joyful traveling jester \ndecided to take on the
     challenge. \n\nWith a bag of jokes and a heart full of fun,\nhe journeyed to
     the kings palace. \n\nHis aim wasn't just to win the prize, but to bring joy
-    to the king with the most hilarious show ever,\nfilling his palace with laughter
+    to the king with \nthe most hilarious show ever,\nfilling his palace with laughter
     and smiles!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f20524d9bbca45f4bbdb42df1dc08b3c, type: 2}
@@ -462,9 +462,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Drag the cards from the bottom\nonto the stage to influence the jesters
-    path\nand see what happens.\r\n\nYour performance ends once the jester \nreaches
-    the tile in front of the king \nor falls off the stage."
+  m_text: "Drag the cards from the bottom\nonto the stage to influence the jester's
+    path\nand see what happens.\r\n\nCollect laughter that appears on your way to
+    gain bonus points.\n\nYour performance ends once the jester \nreaches the tile
+    in front of the king \nor falls off the stage."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f20524d9bbca45f4bbdb42df1dc08b3c, type: 2}
   m_sharedMaterial: {fileID: 3001836950704352968, guid: f20524d9bbca45f4bbdb42df1dc08b3c, type: 2}
