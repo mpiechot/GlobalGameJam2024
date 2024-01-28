@@ -29,7 +29,7 @@ public abstract class ItemBase : MonoBehaviour
         {
             GameContext.King.SubtractPoints(points);
         }
-        else
+        else if(points > 0) 
         {
             GameContext.King.AddPoints(points);
         }
