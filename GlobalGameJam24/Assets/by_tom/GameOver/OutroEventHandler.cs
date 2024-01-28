@@ -43,10 +43,9 @@ public class OutroEventHandler : MonoBehaviour
     private IEnumerator Suspense(GameOverState gameOverState)
     {
         GameContext.Instance.AudioPlayer.StopBGMusic();
+        GameContext.Instance.AudioPlayer.RequestSFX(SFXType.DrumSet1);
         yield return outroFader.PerformOutroFade();
-        GameContext.Instance.AudioPlayer.RequestSFX(SFXType.QuickZip);
         yield return new WaitForSecondsRealtime(1);
-        GameContext.Instance.AudioPlayer.RequestSFX(SFXType.fuerKaka2);
         ExecuteGameOverEvent(gameOverState);
         yield return outroFader.UndoOutroFade();
     }

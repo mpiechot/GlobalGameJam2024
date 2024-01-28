@@ -13,5 +13,7 @@
     Cry,
     Grumbling,
     Laugh,
-    UnsatisfiedGrumpy
+    UnsatisfiedGrumpy,
+    DrumSet1,
+    DrumSet2
 }
