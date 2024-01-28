@@ -18,7 +18,10 @@ public class GameStartup : MonoBehaviour
     {
         if(audioPlayer != null)
         {
-            GameContext.Instance.AudioPlayer = audioPlayer;
+            if (GameContext.Instance.AudioPlayer) 
+                    Destroy(audioPlayer.gameObject);
+            else 
+                GameContext.Instance.AudioPlayer = audioPlayer;
         }
         if (jester != null)
         {
