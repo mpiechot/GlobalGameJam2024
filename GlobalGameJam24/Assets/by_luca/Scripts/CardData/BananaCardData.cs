@@ -6,7 +6,7 @@ public class BananaCardData : CardData
     public BananaCardData()
     {
         executeAction = (ctx, jester) => {
-            jester.SpeedUp();
+            jester.Slip();
             ctx.AudioPlayer.RequestSFX(SFXType.Flip1);
         };
     }
