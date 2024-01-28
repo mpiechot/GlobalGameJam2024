@@ -5,10 +5,10 @@ using UnityEngine;
 public class GameStartup : MonoBehaviour
 {
     [SerializeField]
-    private GGJAudioPlayer audioPlayer;
+    private GGJAudioPlayer? audioPlayer;
 
     [SerializeField]
-    private GameContext gameContext;
+    private GameContext? gameContext;
 
     // Start is called before the first frame update
     void Start()
