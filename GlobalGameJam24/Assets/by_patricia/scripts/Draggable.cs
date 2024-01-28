@@ -53,7 +53,7 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Collider2D dropCollider = Physics2D.OverlapBox(transform.position, Vector2.one * 0.01f, 0, dropLayer);
+        Collider2D dropCollider = Physics2D.OverlapBox(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.one * 0.2f, 0, dropLayer);
         Droppable drop = dropCollider != null ? dropCollider.GetComponent<Droppable>() : null;
         bool dropSuccess = drop != null && drop.Drop(_cardData);
         if(drop && dropSuccess) 

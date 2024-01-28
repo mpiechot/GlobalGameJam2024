@@ -22,6 +22,8 @@ public abstract class ItemBase : MonoBehaviour
         if (!collision.gameObject.transform.parent || !collision.gameObject.transform.parent.TryGetComponent<Jester>(out var jester)) return;
         #endregion
 
+        jester.transform.position = transform.position + jester.transform.position - collision.bounds.center; 
+
         Execute(jester);
         if (points < 0)
         {
