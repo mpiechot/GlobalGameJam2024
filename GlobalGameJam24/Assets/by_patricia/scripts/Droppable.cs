@@ -5,6 +5,7 @@ public class Droppable : ItemBase
 {
     [SerializeField]
     private bool occupied = false;
+
     public bool Occupied { get => occupied; }
 
     [SerializeReference] private SpriteRenderer sr; // Spriterenderer of the item, not the tile.
@@ -44,7 +45,15 @@ public class Droppable : ItemBase
 
     protected override void Execute(Jester jester)
     {
-        action?.Invoke(GameContext, jester);
+        if(action == null)
+        {
+            return;
+        }
+
+        action.Invoke(GameContext, jester);
+
+        Debug.Log("BÄM");
+
         ResetOccupiedState();
     }
 }

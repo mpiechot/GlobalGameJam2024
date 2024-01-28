@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ItemBase : MonoBehaviour
 {
     [SerializeField]
-    private int points;
+    protected int points;
 
     protected GameContext GameContext { get; private set; }
 
@@ -22,8 +22,6 @@ public abstract class ItemBase : MonoBehaviour
         if (!collision.gameObject.transform.parent || !collision.gameObject.transform.parent.TryGetComponent<Jester>(out var jester)) return;
         #endregion
 
-        Debug.Log("BAM");
-        Debug.Log("Executed");
         Execute(jester);
         if (points < 0)
         {

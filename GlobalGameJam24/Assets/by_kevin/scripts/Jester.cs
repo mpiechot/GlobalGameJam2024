@@ -4,13 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(JesterMovement))]
 public class Jester : MonoBehaviour
 {
-    public UnityEvent<Vector3> MovementSwitch = new UnityEvent<Vector3>();
-
-    [SerializeField]
-    private List<(JesterAction, Sprite)> jesterActions = new();
-
     [SerializeField]
     private Animator jesterWalk;
 
@@ -20,20 +16,24 @@ public class Jester : MonoBehaviour
     [SerializeField]
     private ParticleSystem konfettiSystem;
 
+    private JesterMovement jesterMovement;
+
     private Vector3 currentDirection = Vector3.up;
 
     private void Start()
     {
-        MovementSwitch?.Invoke(currentDirection);
+        jesterMovement = GetComponent<JesterMovement>();
+        jesterMovement.ChangeDirection(currentDirection);
         jesterWalk.SetFloat("Horizontal", currentDirection.x);
         jesterWalk.SetFloat("Vertical", currentDirection.y);
     }
 
     public void ChangeDirection(Vector3 direction)
     {
-        MovementSwitch?.Invoke(direction);
+        jesterMovement.ChangeDirection(direction);
         jesterWalk.SetFloat("Horizontal", direction.x);
         jesterWalk.SetFloat("Vertical", direction.y);
+        currentDirection = direction;
     }
 
     public void ChangeDirectionByDegrees(Vector3 degrees)
@@ -42,7 +42,7 @@ public class Jester : MonoBehaviour
         ChangeDirection(newDirection);
     }
 
-    public void SpeedUp()
+public void SpeedUp()
     {
         if(gameObject.GetComponent<Timer>() == null)
         {
@@ -51,7 +51,7 @@ public class Jester : MonoBehaviour
             timer.OnTimeout += SpeedDown;
             timer.OneShot = true;
             timer.Run();
-            GetComponent<JesterMovement>().SpeedModifier = 3.0f;
+            jesterMovement.SpeedModifier = 3.0f;
         }
         else
         {
@@ -63,16 +63,16 @@ public class Jester : MonoBehaviour
 
     private void SpeedDown()
     {
-        GetComponent<JesterMovement>().SpeedModifier = 1.0f;
+        jesterMovement.SpeedModifier = 1.0f;
         Destroy(GetComponent<Timer>());
     }
 
     public void BackUp()
     {
         Debug.Log("BACKUP!");
-        Vector3 currentMovement = GetComponent<JesterMovement>().MovementDir;
+        Vector3 currentMovement = jesterMovement.MovementDir;
         transform.position -= cellDistance * currentMovement;
-        MovementSwitch?.Invoke(-1 * currentMovement);
+        jesterMovement.ChangeDirection(-1 * currentMovement);
     }
 
     public void Flip()
@@ -82,7 +82,8 @@ public class Jester : MonoBehaviour
 
     public void Slip()
     {
-        jesterWalk.SetBool("Slip", true);
+        jesterWalk.SetBool("Banana", true);
+        SpeedUp();
     }
 
     public void Konfetti()
