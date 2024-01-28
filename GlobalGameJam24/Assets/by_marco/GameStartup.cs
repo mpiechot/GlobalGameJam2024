@@ -10,12 +10,26 @@ public class GameStartup : MonoBehaviour
     [SerializeField]
     private GameContext? gameContext;
 
+    [SerializeField]
+    private King king;
+
+    [SerializeField]
+    private Jester jester;
+
     // Start is called before the first frame update
     void Start()
     {
-        SerializedFieldNotAssignedException.ThrowIfNull(audioPlayer, nameof(audioPlayer));
-        SerializedFieldNotAssignedException.ThrowIfNull(gameContext, nameof(gameContext));
-
-        gameContext.AudioPlayer = audioPlayer;
+        if(audioPlayer != null)
+        {
+            gameContext.AudioPlayer = audioPlayer;
+        }
+        if (jester != null)
+        {
+            gameContext.Jester = jester;
+        }
+        if (king != null)
+        {
+            gameContext.King = king;
+        }
     }
 }

@@ -7,12 +7,14 @@ public abstract class ItemBase : MonoBehaviour
     [SerializeField]
     private int points;
 
-    [SerializeField]
-    private GameContext? gameContext;
-
-    protected GameContext GameContext => gameContext != null ? gameContext : throw new SerializedFieldNotAssignedException();
+    protected GameContext GameContext { get; private set; }
 
     protected abstract void Execute(Jester jester);
+
+    private void Start()
+    {
+        GameContext = GameContext.Instance;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
