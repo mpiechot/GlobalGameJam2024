@@ -7,6 +7,9 @@ public class OutroEventHandler : MonoBehaviour
 
     [SerializeField] private GameOverContextSprite[] gameOverContextSprites;
     [SerializeField] private OutroAudioHandler outroAudioHandler;
+    [SerializeField] private OutroFader outroFader;
+
+    private Coroutine gameOverRoutine;
 
     public enum GameOverState
     {
@@ -17,6 +20,19 @@ public class OutroEventHandler : MonoBehaviour
 
     public void HandleGameOver(GameOverState gameOverState)
     {
+        GameContext.Instance.Jester.gameObject.SetActive(false);
+        if (gameOverRoutine != null)
+            StopCoroutine(gameOverRoutine);
+        gameOverRoutine = StartCoroutine(Suspense(gameOverState));
+    }
+
+    public void TestHandleGameOver(int gameOverState)
+    {
+        HandleGameOver((GameOverState)gameOverState);
+    }
+
+    private void ExecuteGameOverEvent(GameOverState gameOverState)
+    {
         foreach (var sprite in gameOverContextSprites)
         {
             sprite.HandleGameOver(gameOverState);
@@ -24,13 +40,15 @@ public class OutroEventHandler : MonoBehaviour
         outroAudioHandler.TriggerGameOverAudio(gameOverState);
     }
 
-    public void TestHandleGameOver(int gameOverState)
+    private IEnumerator Suspense(GameOverState gameOverState)
     {
-        foreach (var sprite in gameOverContextSprites)
-        {
-            sprite.HandleGameOver((GameOverState)gameOverState);
-        }
-        outroAudioHandler.TriggerGameOverAudio((GameOverState)gameOverState);
+        GameContext.Instance.AudioPlayer.StopBGMusic();
+        yield return outroFader.PerformOutroFade();
+        GameContext.Instance.AudioPlayer.RequestSFX(SFXType.QuickZip);
+        yield return new WaitForSecondsRealtime(1);
+        GameContext.Instance.AudioPlayer.RequestSFX(SFXType.fuerKaka2);
+        ExecuteGameOverEvent(gameOverState);
+        yield return outroFader.UndoOutroFade();
     }
 
 }

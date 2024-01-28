@@ -15,6 +15,10 @@ public class GGJAudioPlayer : MonoBehaviour
         Object.DontDestroyOnLoad(this);
     }
 
+    public void StopBGMusic()
+    {
+        bgmPlayer.Stop();
+    }
     public void RequestBGMusic(int bgMusicId)
     {
         bgmPlayer.SetNextTrack(bgMusicId, true);
