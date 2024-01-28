@@ -64,6 +64,7 @@ public void SpeedUp()
     private void SpeedDown()
     {
         jesterMovement.SpeedModifier = 1.0f;
+        Walk();
         Destroy(GetComponent<Timer>());
     }
 
@@ -77,32 +78,29 @@ public void SpeedUp()
 
     public void Flip()
     {
-        jesterWalk.SetBool("Kacke", true);
+        jesterWalk.SetTrigger("Kacke");
     }
 
     public void Slip()
     {
-        jesterWalk.SetBool("Banana", true);
+        jesterWalk.SetTrigger("Banana");
         SpeedUp();
     }
 
     public void Konfetti()
     {
-        jesterWalk.SetBool("Konfetti", true);
+        jesterWalk.SetTrigger("Konfetti");
         konfettiSystem.Play();
     }
 
     public void Troete()
     {
-        jesterWalk.SetBool("Troete", true);
+        jesterWalk.SetTrigger("Troete");
     }
 
     public void Walk()
     {
-        jesterWalk.SetBool("Konfetti", false);
-        jesterWalk.SetBool("Troete", false);
-        jesterWalk.SetBool("Slip", false);
-        jesterWalk.SetBool("Kacke", false);
+        jesterWalk.SetTrigger("Walk");
     }
 
     [Serializable]

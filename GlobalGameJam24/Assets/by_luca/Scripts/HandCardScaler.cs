@@ -63,8 +63,6 @@ public class HandCardScaler : MonoBehaviour
                                     .SetEase(Ease.OutQuad);
         _visualTweenScale = transform.DOScale(_growScale, _growDuration)
                                     .SetEase(Ease.OutQuad);
-
-        Debug.Log(_spriteTransform.transform.localScale);
         _visualTweenSpriteScale = _spriteTransform.transform.DOScale(_spriteGrowScale, _growDuration)
                                             .SetEase(Ease.OutQuad);
 
