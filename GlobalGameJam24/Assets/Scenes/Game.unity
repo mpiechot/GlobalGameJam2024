@@ -248,6 +248,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7253822183695256896, guid: 0f33fdbdae5855b49908f02c2b6b17ee, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7253822183695256896, guid: 0f33fdbdae5855b49908f02c2b6b17ee, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 375
       objectReference: {fileID: 0}
