@@ -713,6 +713,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7280479003694027330, guid: 85b6c78fe59a8e74bb4817257f57862d, type: 3}
+      propertyPath: reactionBaseChangeThreshold
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7380032006742401945, guid: 85b6c78fe59a8e74bb4817257f57862d, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1705,6 +1709,10 @@ PrefabInstance:
       propertyPath: cells.Array.data[33]
       value: 
       objectReference: {fileID: 1508746974}
+    - target: {fileID: 769063438434143594, guid: 11ff0066eab772e468135d8501fae9dd, type: 3}
+      propertyPath: collectableScorePoints
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 778221262215383987, guid: 11ff0066eab772e468135d8501fae9dd, type: 3}
       propertyPath: m_Name
       value: CollectablesManager

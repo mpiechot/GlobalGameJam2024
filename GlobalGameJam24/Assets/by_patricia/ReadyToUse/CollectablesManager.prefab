@@ -81,4 +81,4 @@ MonoBehaviour:
   - {fileID: 0}
   lolSprite: {fileID: 21300000, guid: a0ee17ef99e2ad54882034743614547b, type: 3}
   collectableRespawnTime: 10
-  collectableScorePoints: 10
+  collectableScorePoints: 5
