@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OutroEventHandler : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class OutroEventHandler : MonoBehaviour
     [SerializeField] private GameOverContextSprite[] gameOverContextSprites;
     [SerializeField] private OutroAudioHandler outroAudioHandler;
     [SerializeField] private OutroFader outroFader;
+
+    [SerializeField] private Button[] _buttons;
 
     private Coroutine gameOverRoutine;
 
@@ -37,6 +40,12 @@ public class OutroEventHandler : MonoBehaviour
         {
             sprite.HandleGameOver(gameOverState);
         }
+
+        foreach (Button b in _buttons)
+        {
+            b.gameObject.SetActive(true);
+        }
+
         outroAudioHandler.TriggerGameOverAudio(gameOverState);
     }
 
