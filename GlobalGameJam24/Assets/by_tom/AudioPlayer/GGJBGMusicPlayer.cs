@@ -27,6 +27,11 @@ public class GGJBGMusicPlayer : MonoBehaviour
         bgMusicSources[activePlayer].Play();
     }
 
+    public void Stop()
+    {
+        bgMusicSources[activePlayer].Stop();
+    }
+
     public void SetNextTrack(int trackNumber, bool fade)
     {
         if (fade) FadeNextTrack(trackNumber);

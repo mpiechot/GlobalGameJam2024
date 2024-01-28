@@ -31,6 +31,8 @@ public class King : MonoBehaviour
 
     private float lastActivityTime;
 
+    public bool IsKingHappy { get => amusementScore >= reactionBaseChangeThreshold; }
+
     private void Start()
     {
         outroSpriteAnimation = GetComponent<OutroSpriteAnimation>();

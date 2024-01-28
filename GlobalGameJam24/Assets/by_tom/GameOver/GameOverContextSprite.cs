@@ -20,7 +20,13 @@ public class GameOverContextSprite : MonoBehaviour
 
     public void HandleGameOver(GameOverState gameOverState)
     {
+        gameObject.SetActive(true);
+        if (!image || !outroSpriteAnimation)
+        {
+            image = GetComponent<Image>();
+            outroSpriteAnimation = GetComponent<OutroSpriteAnimation>();
+        }
         image.sprite = gameOverSprites[(int)gameOverState];
-        outroSpriteAnimation.TriggerPulse();
+        outroSpriteAnimation?.TriggerPulse();
     }
 }
