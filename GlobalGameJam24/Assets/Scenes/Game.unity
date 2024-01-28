@@ -1710,6 +1710,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1508746974}
     - target: {fileID: 769063438434143594, guid: 11ff0066eab772e468135d8501fae9dd, type: 3}
+      propertyPath: collectableRespawnTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 769063438434143594, guid: 11ff0066eab772e468135d8501fae9dd, type: 3}
       propertyPath: collectableScorePoints
       value: 5
       objectReference: {fileID: 0}
