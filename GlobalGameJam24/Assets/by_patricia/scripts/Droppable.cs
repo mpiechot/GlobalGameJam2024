@@ -43,11 +43,11 @@ public class Droppable : ItemBase
         action = null;
     }
 
-    protected override void Execute(Jester jester)
+    protected override bool Execute(Jester jester)
     {
         if(action == null)
         {
-            return;
+            return false;
         }
 
         action.Invoke(GameContext, jester);
@@ -55,5 +55,6 @@ public class Droppable : ItemBase
         Debug.Log("BÄM");
 
         ResetOccupiedState();
+        return true;
     }
 }

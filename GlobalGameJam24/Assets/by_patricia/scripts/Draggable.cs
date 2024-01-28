@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -53,16 +54,26 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseUp()
     {
-        Collider2D dropCollider = Physics2D.OverlapBox(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.one * 0.2f, 0, dropLayer);
-        Droppable drop = dropCollider != null ? dropCollider.GetComponent<Droppable>() : null;
-        bool dropSuccess = drop != null && drop.Drop(_cardData);
-        if(drop && dropSuccess) 
+        transform.position = spriteDragStartPosition;
+
+        Collider2D col = Physics2D.OverlapBoxAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.one * 2.5f, 0, dropLayer)
+            .OrderBy(collider => Vector2.Distance(Camera.main.ScreenToWorldPoint(Input.mousePosition), collider.bounds.center))
+            .FirstOrDefault(collider => collider.GetComponent<Droppable>());
+
+        if (!col)
         {
-            OnSuccessfulDrop?.Invoke();
+            OnDropped?.Invoke(false);
+        }
+        else
+        {
+            Droppable drop = col.GetComponent<Droppable>();
+            bool dropSuccess = drop != null && drop.Drop(_cardData);
+            if (dropSuccess)
+            {
+                OnSuccessfulDrop?.Invoke();
+            }
+            OnDropped?.Invoke(dropSuccess);
         }
 
-        OnDropped?.Invoke(dropSuccess);
-
-        transform.position = spriteDragStartPosition;
     }
 }

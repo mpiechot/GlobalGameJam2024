@@ -9,7 +9,7 @@ public abstract class ItemBase : MonoBehaviour
 
     protected GameContext GameContext { get; private set; }
 
-    protected abstract void Execute(Jester jester);
+    protected abstract bool Execute(Jester jester);
 
     private void Start()
     {
@@ -22,9 +22,10 @@ public abstract class ItemBase : MonoBehaviour
         if (!collision.gameObject.transform.parent || !collision.gameObject.transform.parent.TryGetComponent<Jester>(out var jester)) return;
         #endregion
 
-        jester.transform.position = transform.position + jester.transform.position - collision.bounds.center; 
 
-        Execute(jester);
+        if(Execute(jester))
+            jester.transform.position = transform.position + jester.transform.position - collision.bounds.center; 
+        
         if (points < 0)
         {
             GameContext.King.SubtractPoints(points);
