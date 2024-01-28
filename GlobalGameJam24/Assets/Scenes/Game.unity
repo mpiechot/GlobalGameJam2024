@@ -225,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5636659810300048927, guid: 0f33fdbdae5855b49908f02c2b6b17ee, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6534783695689219265, guid: 0f33fdbdae5855b49908f02c2b6b17ee, type: 3}
       propertyPath: m_Size.x
@@ -2113,6 +2113,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 29546081}
     m_Modifications:
+    - target: {fileID: 216515644734589975, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 689979251033842494, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: _cardDeckLogic
       value: 
@@ -2135,7 +2139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4184689533098214641, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2180,6 +2184,10 @@ PrefabInstance:
     - target: {fileID: 8404745245818560071, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_Name
       value: HandCard 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637695753836091474, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2761,6 +2769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 29546081}
     m_Modifications:
+    - target: {fileID: 216515644734589975, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 689979251033842494, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: _cardDeckLogic
       value: 
@@ -2783,7 +2795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4184689533098214641, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2832,6 +2844,10 @@ PrefabInstance:
     - target: {fileID: 8404745245818560071, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_Name
       value: HandCard 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637695753836091474, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3582,6 +3598,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 29546081}
     m_Modifications:
+    - target: {fileID: 216515644734589975, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 689979251033842494, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: _cardDeckLogic
       value: 
@@ -3604,7 +3624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4184689533098214641, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3653,6 +3673,10 @@ PrefabInstance:
     - target: {fileID: 8404745245818560071, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_Name
       value: HandCard 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637695753836091474, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4352,6 +4376,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 29546081}
     m_Modifications:
+    - target: {fileID: 216515644734589975, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 689979251033842494, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: _cardDeckLogic
       value: 
@@ -4374,7 +4402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4184689533098214641, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6430600617608857707, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4423,6 +4451,10 @@ PrefabInstance:
     - target: {fileID: 8404745245818560071, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
       propertyPath: m_Name
       value: HandCard 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637695753836091474, guid: 43a339b6a3c50854ab89f2330b5e5a9b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
