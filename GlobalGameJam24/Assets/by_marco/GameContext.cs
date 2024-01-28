@@ -33,11 +33,11 @@ public class GameContext : MonoBehaviour
         }
     }
 
-    public Jester Jester { get; set; }
+    public Jester Jester { get; set; } = null!;
 
-    public GameObject Grid { get; set; }
-
-    public King King { get; set; }
+    public GameObject Grid { get; set; } = null!;
+   
+    public King King { get; set; } = null!;
 
     public GGJAudioPlayer AudioPlayer { get; set; } = null!;
 }
