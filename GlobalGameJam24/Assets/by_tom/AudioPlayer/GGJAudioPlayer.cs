@@ -12,7 +12,7 @@ public class GGJAudioPlayer : MonoBehaviour
     {
         bgmPlayer = GetComponentInChildren<GGJBGMusicPlayer>();
         sfxPlayer = GetComponentInChildren<GGJSFXPlayer>();
-        Object.DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this);
     }
 
     public void StopBGMusic()
@@ -27,6 +27,11 @@ public class GGJAudioPlayer : MonoBehaviour
     public void RequestSFX(SFXType sfx)
     {
         sfxPlayer.RequestSFX((int)sfx);
+    }
+
+    public void StopSFX(SFXType sfx)
+    {
+        sfxPlayer.StopSFX((int)sfx);
     }
 
 }

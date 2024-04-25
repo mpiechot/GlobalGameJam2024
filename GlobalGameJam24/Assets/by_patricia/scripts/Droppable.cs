@@ -54,8 +54,6 @@ public class Droppable : ItemBase
 
         action.Invoke(GameContext, jester);
 
-        Debug.Log("BÄM");
-
         ResetOccupiedState();
         return true;
     }

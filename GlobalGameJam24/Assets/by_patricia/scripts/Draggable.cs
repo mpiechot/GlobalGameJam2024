@@ -33,8 +33,9 @@ public class Draggable : MonoBehaviour
         }
     }
 
-    private Vector3 mouseDragStartPosition;
     private Vector3 spriteDragStartPosition;
+    private Vector3 initialMousePosition;
+    private Vector3 initialGameObjectPosition;
 
     public UnityEvent OnSuccessfulDrop;
     public UnityEvent OnDragged;
@@ -42,18 +43,23 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDown()
     {
-        mouseDragStartPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         spriteDragStartPosition = transform.position;
+        initialMousePosition = Input.mousePosition;
+        initialGameObjectPosition = transform.position;
         OnDragged?.Invoke();
     }
 
     private void OnMouseDrag()
     {
-        transform.position = spriteDragStartPosition + (Camera.main.ScreenToWorldPoint(Input.mousePosition) - mouseDragStartPosition);
+        // Idk, this only works when we set the z position..
+        Vector3 offset = new(0, 0, Camera.main.ScreenToWorldPoint(initialMousePosition).z);
+        Vector3 targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) - offset;
+        transform.position = targetPosition;
     }
 
     private void OnMouseUp()
     {
+        // Reset position
         transform.position = spriteDragStartPosition;
 
         Collider2D col = Physics2D.OverlapBoxAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.one * 2.5f, 0, dropLayer)
@@ -74,6 +80,5 @@ public class Draggable : MonoBehaviour
             }
             OnDropped?.Invoke(dropSuccess);
         }
-
     }
 }

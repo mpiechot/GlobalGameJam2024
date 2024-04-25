@@ -10,7 +10,6 @@ public class GameOverCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("Exited");
         OnGameOver?.Invoke();
     }
 

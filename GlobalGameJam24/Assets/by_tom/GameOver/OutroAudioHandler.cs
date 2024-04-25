@@ -25,4 +25,11 @@ public class OutroAudioHandler : MonoBehaviour
         }
     }
 
+    public void StopGameOverSFX()
+    {
+        GameContext.Instance.AudioPlayer.StopSFX(SFXType.Cry);
+        GameContext.Instance.AudioPlayer.StopSFX(SFXType.Grumbling);
+        GameContext.Instance.AudioPlayer.StopSFX(SFXType.Laugh);
+    }
+
 }

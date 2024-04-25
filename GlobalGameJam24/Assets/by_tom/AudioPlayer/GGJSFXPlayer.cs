@@ -23,5 +23,16 @@ public class GGJSFXPlayer : MonoBehaviour
         sfxPlayerIndex = (sfxPlayerIndex + 1) % sfxSources.Length;
     }
 
+    public void StopSFX(int sfxIndex)
+    {
+        foreach (AudioSource sfxSource in sfxSources)
+        {
+            if (sfxSource.isPlaying && sfxSource.clip == sfxClips[sfxIndex])
+            {
+                sfxSource.Stop();
+            }
+        }
+    }
+
 
 }
